@@ -36,12 +36,10 @@ public class Posts_Chapter07 {
                     """;
            
 
-            // SQLクエリを実行（DBMSに送信）
             System.out.println("レコード追加を実行します");
             int rowCnt = statement.executeUpdate(sql);
             System.out.println(rowCnt + "件のレコードが追加されました");
             
-            // ユーザーIDが1002のレコードを検索して出力
             sql = "SELECT * FROM posts WHERE user_id = 1002;";
             ResultSet result = statement.executeQuery(sql);  
             System.out.println("ユーザーIDが1002のレコードを検索しました");
@@ -57,8 +55,6 @@ public class Posts_Chapter07 {
         } catch (SQLException e) {
             System.out.println("エラー発生：" + e.getMessage());
         } finally {
-            // 使用したオブジェクトを解放
-        	//使用したオブジェクトを解放
 			if( statement != null) {
 				try { statement.close(); } catch(SQLException ignore) {};
 			}
